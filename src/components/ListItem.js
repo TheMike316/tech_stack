@@ -10,7 +10,6 @@ class ListItem extends Component {
     const { library, selectedLibraryId } = this.props;
 
     if (library.id === selectedLibraryId) {
-      console.log('asdfasdfad');
       return (
         <CardSection>
           <Text>{library.description}</Text>
@@ -45,10 +44,6 @@ const styles = {
   }
 };
 
-const mapStateToProps = state => {
-  console.log('mapStateToProps');
-  console.log(state);
-  return ({ selectedLibraryId: state.selectedLibraryId });
-};
+const mapStateToProps = state => ({ selectedLibraryId: state.selectedLibraryId });
 
 export default connect(mapStateToProps, actions)(ListItem);
